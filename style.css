@@ -372,6 +372,9 @@ section {
     position: relative;
     overflow: hidden;
 }
+#video {
+    scroll-margin-top: 80px;
+}
 
 
 /* Exemplo: seções específicas (Regras de Força) */
