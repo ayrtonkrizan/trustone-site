@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
       lang_portuguese: "Português",
       lang_english: "English",
       lang_spanish: "Español",
-      hero_title: 'Meet <span class="highlight">TrustHub</span>',
+      hero_title: 'Experience <span class="highlight">TrustHub</span>',
       hero_description: "Approvals in seconds.<br>Simple, secure and 100% integrated with your ERP.<br>Less bureaucracy, more speed, instant results.",
       showcase_subtitle: "The fastest, most modern and safest way to approve purchases, sales, contracts, expenses and requests — all from the palm of your hand.",
       process_title: 'How does the <span class="highlight">approval</span> process work?',
