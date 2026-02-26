@@ -713,6 +713,7 @@ section:nth-of-type(even) {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
+    
 }
 
 .service-card:hover {
@@ -730,6 +731,14 @@ section:nth-of-type(even) {
     font-size: 1.8rem;
     margin-bottom: 15px;
     color: var(--text-primary);
+    
+    /* SOLUÇÃO PARA NÃO SAIR DO CARD: */
+    display: block;
+    width: 100%;
+    white-space: normal;      /* Permite quebra de linha se faltar espaço */
+    word-wrap: break-word;    /* Garante que palavras gigantes não estourem */
+    overflow-wrap: break-word;
+    line-height: 1.2;         /* Melhora o visual se quebrar em 2 linhas */
 }
 
 .service-card p {
@@ -747,7 +756,18 @@ section:nth-of-type(even) {
 .service-features li {
     margin-bottom: 10px;
     color: var(--text-secondary);
+    display: flex !important;            /* Transforma o item em flexbox */
+    text-align: left;
+    margin-bottom: 12px;
+    align-items: flex-start;  /* Alinha o check com a primeira linha de texto */
+    gap: 10px;
 }
+.service-features li span, 
+.service-features li i {
+    flex-shrink: 0;                 /* Impede o ícone de encolher */
+    display: inline-block;
+}
+
 
 .service-features li::before {
     content: "\f00c";
@@ -756,21 +776,29 @@ section:nth-of-type(even) {
     font-weight: 900;
     color: var(--accent-color);
     margin-right: 10px;
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 .th-service-features li {
     margin-bottom: 10px;
     color: var(--text-secondary);
     display: flex;
-    align-items: center;
-    gap: 8px; 
+    align-items: flex-start;
+    gap: 10px; 
+    text-align: left;
 }
 
-.th-service-features li::before {
-    content: none !important;
+th-service-features li::before {
+    /* REATIVANDO O ÍCONE */
+    content: "\f00c" !important; 
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     color: var(--accent-color);
     font-size: 0.9rem;
+    
+    /* AJUSTE PARA NÃO SAIR DO LUGAR */
+    flex-shrink: 0;          /* Impede o ícone de ser "esmagado" pelo texto */
+    margin-top: 4px;         /* Alinha o check exatamente com a primeira linha de texto */
 }
 /* -------------------------------------------------------------------------- */
 /* 8. RESULT ITEM (Card de Resultados/Contadores) */
