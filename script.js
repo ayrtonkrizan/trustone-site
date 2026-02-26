@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       benefit1_item1: "⏳ Average 40% reduction in approval time",
       benefit1_item2: "❌ Optimizing operational throughput",
       benefit2_title: "Financial Impact",
-      benefit2_item1: "💼 Optmized cash flow",
+      benefit2_item1: "💼 Optimized cash flow",
       benefit2_item2: "💰 Reduced costs with SAP/Cloud licenses",
       benefit3_title: "Governance and Traceability",
       benefit3_item1: "📑 Guaranteed compliance",
