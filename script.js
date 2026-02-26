@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
       feature2_title: "Interface and Speed",
       feature2_desc: "Instant one touch approval , through a simple and intuitive interface.",
       feature2_item1: "Simple and intuitive interface",
-      feature2_item2: "Intant one-touch approval",
+      feature2_item2: "Instant one-touch approval",
       feature3_title: "Security and Reach",
       feature3_desc: "Google-level security.<br>Multilingual support for global teams.",
       feature3_item1: "Secured by Google technology",
