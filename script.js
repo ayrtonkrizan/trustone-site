@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       step2_title: "2. Immediate Notification",
       step2_desc: "The responsible manager receives the notification on TrustHub application.",
       step3_title: "3. Instant Approval ",
-      step3_desc: "The manager approves or rejects  requests with just a touch on the screen.",
+      step3_desc: "The manager approves or rejects  requests with just a touch.",
       step4_title: "4. Automatic Synchronization",
       step4_desc: "The decision is automatically linked with your ERP, finishing the process.",
       features_title: 'The App in <span class="highlight">Action.</span>',
