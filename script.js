@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
       step4_title: "4. Automatic Synchronization",
       step4_desc: "The decision is automatically linked with your ERP, finishing the process.",
       features_title: 'The App in <span class="highlight">Action.</span>',
-      features_subtitle: "Fast, simple and designed for the modern manager.",
+      features_subtitle: "Unmatched agility for managers on the go.",
       feature1_title: "Complete Management",
       feature1_desc: "Manage all your purchase, sale, contract and expense approvals in one place.",
       feature1_item1: "Full approval management",
