@@ -395,6 +395,112 @@
   color: var(--stone);
 }
 
+.case-card__link {
+  margin-top: 14px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.case-modal {
+  width: min(760px, calc(100vw - 40px));
+  max-height: calc(100vh - 80px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 24px 64px rgba(0, 24, 48, 0.24);
+}
+
+.case-modal::backdrop {
+  background: rgba(10, 20, 32, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.case-modal__inner {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 80px);
+}
+
+.case-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: calc(var(--space-unit) * 0.75) calc(var(--space-unit) * 0.75) calc(var(--space-unit) * 0.5);
+  border-bottom: 1px solid var(--mist);
+}
+
+.case-modal__title {
+  margin-bottom: 4px;
+}
+
+.case-modal__meta {
+  margin-bottom: 0;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.case-modal__close {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--fog);
+  border-radius: 50%;
+  background: none;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--graphite);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.case-modal__close:hover {
+  color: var(--trust-navy);
+  border-color: var(--trust-navy);
+}
+
+.case-modal__body {
+  padding: calc(var(--space-unit) * 0.75);
+  overflow-y: auto;
+}
+
+.case-modal__qa {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--mist);
+}
+
+.case-modal__qa:last-child {
+  border-bottom: 0;
+}
+
+.case-modal__qa h3 {
+  font-family: var(--font-sora);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--trust-navy);
+  margin: 0 0 8px;
+}
+
+.case-modal__qa p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--graphite);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .case-modal__header,
+  .case-modal__body {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 @media (max-width: 1024px) {
   .case-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

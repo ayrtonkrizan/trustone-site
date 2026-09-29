@@ -14,6 +14,7 @@
   const menuToggle = document.getElementById('menuToggle');
   const mainNav = document.getElementById('mainNav');
   const metricNumbers = document.querySelectorAll('.metric-card__number');
+  const modalTriggers = document.querySelectorAll('[data-modal-open]');
 
   // --------------------------------------------------------------------------
   // 2. SCROLL DO HEADER
@@ -119,4 +120,30 @@
       number.textContent = prefix + target + suffix;
     });
   }
+
+  // --------------------------------------------------------------------------
+  // 5. MODAIS DE ENTREVISTA (casos de sucesso)
+  // Abre o <dialog> indicado por data-modal-open; fecha via data-modal-close
+  // ou clique no backdrop. O Esc é tratado nativamente pelo elemento <dialog>.
+  // --------------------------------------------------------------------------
+  modalTriggers.forEach(function (trigger) {
+    const modal = document.getElementById(trigger.dataset.modalOpen);
+    if (!modal) return;
+
+    trigger.addEventListener('click', function () {
+      modal.showModal();
+    });
+
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        modal.close();
+      }
+    });
+
+    modal.querySelectorAll('[data-modal-close]').forEach(function (closeButton) {
+      closeButton.addEventListener('click', function () {
+        modal.close();
+      });
+    });
+  });
 })();
