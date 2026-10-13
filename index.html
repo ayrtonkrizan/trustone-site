@@ -237,7 +237,35 @@
         </div>
 
         <div class="contact__form">
-          <iframe src="https://forms.clickup.com/90132077856/f/2ky4mq90-2053/MAJSIE3QM53Y53KJA2" title="Formulário de Contato TrustOne Solutions" loading="lazy" allowfullscreen></iframe>
+          <form class="lead-form" id="contactForm" novalidate>
+            <input type="hidden" name="request_type" value="contact" />
+            <div class="lead-form__trap" aria-hidden="true"><label>Não preencha<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+
+            <div class="field field--full"><label for="lf-name">Nome completo *</label><input id="lf-name" name="full_name" type="text" autocomplete="name" maxlength="255" required /></div>
+            <div class="field"><label for="lf-email">E-mail *</label><input id="lf-email" name="email" type="email" autocomplete="email" maxlength="255" required /></div>
+            <div class="field"><label for="lf-phone">Telefone *</label><input id="lf-phone" name="phone" type="tel" autocomplete="tel" placeholder="(11) 99999-9999" maxlength="30" required /></div>
+            <div class="field field--full"><label for="lf-company">Empresa *</label><input id="lf-company" name="company_name" type="text" autocomplete="organization" maxlength="255" required /></div>
+            <div class="field"><label for="lf-segment">Segmento *</label>
+              <select id="lf-segment" name="segment" required>
+                <option value="">Selecione</option><option>Indústria</option><option>Comércio / Distribuição</option><option>Serviços</option><option>Tecnologia</option><option>Saúde</option><option>Agronegócio</option><option>Construção</option><option>Outro</option>
+              </select></div>
+            <div class="field"><label for="lf-employees">Nº de funcionários *</label>
+              <select id="lf-employees" name="employee_count" required>
+                <option value="">Selecione</option><option>1-10</option><option>11-50</option><option>51-100</option><option>101-500</option><option>501-1000</option><option>Mais de 1000</option>
+              </select></div>
+            <div class="field"><label for="lf-revenue">Faturamento anual *</label>
+              <select id="lf-revenue" name="annual_revenue" required>
+                <option value="">Selecione</option><option>Até R$ 4,8 milhões</option><option>R$ 4,8 a 30 milhões</option><option>R$ 30 a 100 milhões</option><option>R$ 100 a 300 milhões</option><option>Acima de R$ 300 milhões</option>
+              </select></div>
+            <div class="field"><label for="lf-found">Como nos encontrou? *</label>
+              <select id="lf-found" name="found_us" required>
+                <option value="">Selecione</option><option>Google</option><option>LinkedIn</option><option>Instagram</option><option>YouTube</option><option>Indicação</option><option>Evento</option><option>Outro</option>
+              </select></div>
+            <div class="field field--full"><label for="lf-message">Mensagem</label><textarea id="lf-message" name="message" rows="4" maxlength="5000"></textarea></div>
+
+            <p class="lead-form__status" id="contactStatus" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn btn--primary lead-form__submit">Enviar mensagem <span class="arrow" aria-hidden="true">→</span></button>
+          </form>
         </div>
       </div>
     </section>

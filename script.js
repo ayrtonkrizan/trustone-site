@@ -147,3 +147,70 @@
     });
   });
 })();
+
+// --------------------------------------------------------------------------
+// FORMULÁRIO DE CONTATO → proxy serverless (worker/) → API da Plataforma
+// O token da Plataforma fica só no proxy; aqui apenas o endpoint público.
+// --------------------------------------------------------------------------
+(function () {
+  'use strict';
+  var LEAD_ENDPOINT = 'https://us-central1-trustone-app-aprovacao.cloudfunctions.net/api/leads/website'; // trust-hub: apps/api, rota /leads/website
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  var status = document.getElementById('contactStatus');
+  var btn = form.querySelector('button[type="submit"]');
+  var pending = null; // { key, body } preservado para retentativas
+
+  function uuid() {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (Math.random() * 16) | 0;
+      return (c === 'x' ? r : (r & 3) | 8).toString(16);
+    });
+  }
+  function say(msg, cls) { status.textContent = msg; status.className = 'lead-form__status ' + (cls || ''); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var bad = false;
+    form.querySelectorAll('[required]').forEach(function (el) {
+      var ok = el.value.trim() !== '' && el.checkValidity();
+      el.classList.toggle('is-invalid', !ok);
+      if (!ok) bad = true;
+    });
+    var phone = form.elements.phone;
+    if (!/^\+?[0-9\s().-]{10,30}$/.test(phone.value.trim())) { phone.classList.add('is-invalid'); bad = true; }
+    if (bad) { say('Revise os campos destacados.', 'is-error'); return; }
+    if (form.elements.website.value) return; // honeypot
+
+    var data = {};
+    new FormData(form).forEach(function (v, k) { if (k !== 'website') data[k] = String(v).trim(); });
+    if (!data.message) delete data.message;
+    var body = JSON.stringify(data);
+    // Mesmo payload => mesma chave (retentativa); payload novo => nova chave.
+    if (!pending || pending.body !== body) pending = { key: uuid(), body: body };
+
+    btn.disabled = true; say('Enviando…');
+    fetch(LEAD_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Idempotency-Key': pending.key },
+      body: body
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { return { r: r, j: j }; });
+    }).then(function (x) {
+      if (x.r.ok) {
+        form.reset(); pending = null;
+        say('Recebemos sua mensagem! Nossa equipe retornará em breve.', 'is-ok');
+      } else if (x.r.status === 422) {
+        say('Alguns dados são inválidos. Revise o formulário e tente novamente.', 'is-error');
+      } else if (x.r.status === 429) {
+        say('Muitas tentativas. Aguarde um instante e tente novamente.', 'is-error');
+      } else {
+        say('Não foi possível enviar agora. Tente novamente ou escreva para comercial@trustone.solutions.', 'is-error');
+      }
+    }).catch(function () {
+      say('Falha de conexão. Tente novamente — seus dados não serão duplicados.', 'is-error');
+    }).then(function () { btn.disabled = false; });
+  });
+  form.addEventListener('input', function (e) { e.target.classList.remove('is-invalid'); });
+})();
