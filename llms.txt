@@ -1,0 +1,27 @@
+# TrustOne Solutions
+
+> Consultoria de SAP Business One em São Paulo (SP). Implantação, sustentação, revitalização, treinamentos, desenvolvimento de add-ons e integrações, automação de processos e produtos próprios: TrustHub (aprovações), TrustCost (custos) e TrustFrete (fretes).
+
+Informações autodeclaradas pela empresa. CNPJ 61.787.106/0001-71. Contato: comercial@trustone.solutions, +55 11 96333-5424, Rua Pais Leme, 215, conjunto 1713, Pinheiros, São Paulo (SP), segunda a sexta, 8h às 18h. Observação: o TrustHub da TrustOne Solutions é um aplicativo para SAP Business One e não tem relação com a empresa de crédito de mesmo nome.
+
+## Páginas principais
+
+- [Início](https://trustone.solutions/): visão geral dos serviços e produtos.
+- [SAP Business One](https://trustone.solutions/sapb1.html): implantação, evolução, integração e dashboards sobre o ERP.
+- [Produtos](https://trustone.solutions/produtos.html): TrustHub, TrustCost e TrustFrete.
+- [TrustHub](https://trustone.solutions/trusthub.html): aplicativo de aprovações empresariais integrado ao SAP Business One.
+- [Casos de sucesso](https://trustone.solutions/casos.html): Pitzi, Polyexcel e Grupo Vetorial.
+
+## Blog
+
+- [Como aprovar documentos do SAP Business One pelo celular](https://trustone.solutions/blog/aprovar-documentos-sap-business-one-pelo-celular.html): O que muda quando o aprovador decide pelo celular: notificação, contexto do documento, histórico e retorno ao SAP Business One. Com exemplos de uso.
+- [Frete de importação via DI no SAP Business One: como automatizar](https://trustone.solutions/blog/frete-de-importacao-di-sap-business-one.html): Como reduzir lançamentos manuais de despesas de frete vinculadas à Declaração de Importação no SAP Business One, com o exemplo do Grupo Vetorial.
+- [Encerramento de custos no SAP Business One: o que costuma travar](https://trustone.solutions/blog/encerramento-de-custos-sap-business-one.html): Por que o encerramento de custos fica incompleto em muitas implantações do SAP Business One e como o TrustCost ajudou o Grupo Vetorial a avançar.
+- [Reforma tributária e SAP Business One: o que revisar no ERP](https://trustone.solutions/blog/reforma-tributaria-e-sap-business-one.html): Checklist para preparar o SAP Business One para a reforma tributária brasileira: cadastros, parametrizações fiscais, documentos e integrações.
+
+## Optional
+
+- [Sitemap](https://trustone.solutions/sitemap.xml)
+- [LinkedIn](https://www.linkedin.com/company/trustone-solutions/)
+- [Instagram](https://www.instagram.com/trustone.solutions/)
+- [YouTube](https://www.youtube.com/@TrustOneSolutionsB1)

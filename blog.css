@@ -1,0 +1,14 @@
+/* Blog TrustOne: leitura de artigos */
+.post { max-width: 760px; padding-top: 56px; padding-bottom: 72px; }
+.post__title { margin: 12px 0 8px; }
+.post__meta { margin-bottom: 28px; }
+.post__summary { background: var(--mist); border-left: 3px solid var(--trust-navy); padding: 18px 20px; margin-bottom: 32px; }
+.post__summary strong { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--trust-navy); }
+.post__summary p { margin-top: 6px; color: var(--ink); }
+.post__body h2 { font-family: "Sora", sans-serif; font-weight: 500; font-size: 1.35rem; color: var(--trust-navy); margin: 36px 0 12px; }
+.post__body p, .post__body li { line-height: 1.7; color: var(--graphite); }
+.post__body p { margin: 0 0 14px; }
+.post__body ul { margin: 0 0 14px; padding-left: 22px; display: grid; gap: 8px; }
+.post__cta { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--fog); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.case-card .subhead a { color: inherit; text-decoration: none; }
+.case-card .subhead a:hover { text-decoration: underline; }
